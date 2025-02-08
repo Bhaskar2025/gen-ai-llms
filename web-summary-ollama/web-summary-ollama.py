@@ -2,11 +2,11 @@ import requests
 
 from webscrapper.website import Website
 
-site = Website("https://biryanibykilo.com/")
+site = Website("https://globe24news.com/")
 HEADERS = {
     "Content-Type": "application/json"}
 OLLAMA_API = "http://localhost:11434/api/chat"
-MODEL = "llama3.2"
+MODEL = "deepseek-r1"
 # Define system and user prompts
 system_prompt = ("You are an assistant that analyzes the contents of a website "
                  "and provides a detailed summary, ignoring text that might be navigation related."
@@ -14,7 +14,7 @@ system_prompt = ("You are an assistant that analyzes the contents of a website "
 
 def user_prompt_generator(website):
     user_prompt = "The contents of this website is as follows; \
-    please provide a detailed summary of this website in markdown. \
+    please provide a detailed summary of this website. \
     If it includes news or announcements, then summarize these too.\n\n"
     user_prompt += website.text
     return user_prompt
