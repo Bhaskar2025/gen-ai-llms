@@ -65,7 +65,7 @@ def call_llama():
 print(f"GPT response:\n {gpt_messages[0]}\n")
 print(f"Llama response:\n {llama_messages[0]}\n")
 
-for i in range(3):
+for i in range(5):
     gpt_next = call_gpt()
     print(f"GPT response:\n {gpt_next}\n")
     gpt_messages.append(gpt_next)
