@@ -32,7 +32,7 @@ def user_prompt_generator(website):
 # Send a request to OpenAI's GPT model
 site = Website("https://globe24news.com/")
 
-response = openai.chat.completions.create(
+response = client.chat.completions.create(
         model = "deepseek-reasoner",
         messages=[
             {"role": "system", "content": system_prompt},
