@@ -2,14 +2,11 @@ import os
 
 import openai
 from dotenv import load_dotenv
-from openai import OpenAI
 
-from webscrapper import website
 from webscrapper.website import Website
 
 load_dotenv(override=True)
-# Set up OpenAI API key
-#openai.api_key = os.environ.get("OPENAI_API_KEY")
+
 base_url = "https://api.deepseek.com"
 
 API_KEY = os.environ.get("DEEPSEEK_API_KEY")
@@ -28,8 +25,6 @@ def user_prompt_generator(website):
     return user_prompt
 
 
-
-# Send a request to OpenAI's GPT model
 site = Website("https://globe24news.com/")
 
 response = client.chat.completions.create(
